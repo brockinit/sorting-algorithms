@@ -18,3 +18,10 @@ Javascript examples of the different types of sorting methods typically used on 
 6. This process now continues starting with the number at the third position.
 7. It switches with the next value that is smaller than itself.
 8. By the time the end of the array is reached, all of the numbers will be sorted.
+
+## Merge Sort
+1. Merge sort works by taking an unordered list and breaking it to to two equal or near equal lists.
+2. Once this has been accomplished, the elements from each list are compared against one another.
+3. The smaller of the two being compared is pushed to a 'results' array.
+4. As new values enter the 'results' array, they are compared with the smallest figures in the 'results' array to  determine their position.
+5. At the completion of this process, both arrays have been merged, and the resulting array is sorted.
