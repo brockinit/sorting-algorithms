@@ -25,3 +25,13 @@ Javascript examples of the different types of sorting methods typically used on 
 3. The smaller of the two being compared is pushed to a 'results' array.
 4. As new values enter the 'results' array, they are compared with the smallest figures in the 'results' array to  determine their position.
 5. At the completion of this process, both arrays have been merged, and the resulting array is sorted.
+
+## Quick Sort
+1. Quick sort is the sorting method using the native Javascript function, 'sort()'.
+2. It sorts by first checking to make sure that we aren't dealing with an empty array.
+3. Once this possibility has been eliminated, quick sort will create a left and right array. The left will be smaller than the pivot and the right will be larger.
+4. The first number is assigned to the role of 'pivot' while the rest of the array is scanned.
+5. If the number of the array we're looping through is larger than or equal to the pivot, we send it to the right. If it's smaller, we send it to the left.
+6. The left array then goes through its own quick sort once this is finished, which pushes the lowest numbers all the way to the far left.
+7. At the end of this process, the empty array that is returned will allow us to go back up the chain until we get to the initial instance of quick sort.
+8. At this point, a sorted left array will be merged with the pivot and sorted right array.
