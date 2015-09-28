@@ -35,3 +35,11 @@ Javascript examples of the different types of sorting methods typically used on 
 6. The left array then goes through its own quick sort once this is finished, which pushes the lowest numbers all the way to the far left.
 7. At the end of this process, the empty array that is returned will allow us to go back up the chain until we get to the initial instance of quick sort.
 8. At this point, a sorted left array will be merged with the pivot and sorted right array.
+
+## Bubble Sort
+1. This simple algorithm works by comparing numbers in an array to those in front of them.
+2. The idea is to compare the number at the beginning of the array to all those to the right.
+3. The higher of the numbers being compared, will continue to be compared against all others to the right.
+4. At the end of the first pass, you will be left with the highest number at the far right of the array.
+5. This process continues, except now it will stop at the second to last position in the array. After two passes, you will be left with the highest and second highest values.
+6. The number of passes required is completely dependant upon the size of the array.
