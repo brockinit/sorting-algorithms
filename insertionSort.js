@@ -1,18 +1,18 @@
-function insertionSort (array) {
-  //looping through the total length of the unsorted array
-  for (var i = 0; i < array.length; i++) {
-    //setting the current iteration of the unsorted array to a variable
-    var check = array[i];
-    //checking through the sorted area of the array
-    for (var j = i - 1; j >= 0 && (array[j] > check); j--) {
+function insertionSort (items) {
+  //looping through the total length of the unsorted items
+  for (var i = 0; i < items.length; i++) {
+    //setting the current iteration of the unsorted items to a variable
+    var check = items[i];
+    //checking through the sorted area of the items
+    for (var j = i - 1; j >= 0 && (items[j] > check); j--) {
       //shift the number over
-      array[j + 1] = array[j];
+      items[j + 1] = items[j];
     }
     //insert the copied position from up top into the correct position
-    array[j + 1] = check;
+    items[j + 1] = check;
+    drawLater(time++, items.map(function(d) { return d; }));
   }
-  //return the sorted array
-  return array;
+  //return the sorted items
+  console.log(data);
+  return items;
 }
-
-//module.exports = insertionSort;

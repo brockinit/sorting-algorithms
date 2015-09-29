@@ -1,4 +1,4 @@
-function quickSort(arr) {
+/*function quickSort(arr) {
   //if array is empty
   if (arr.length === 0) {
     return [];
@@ -21,4 +21,4 @@ function quickSort(arr) {
 }
 
 
-//module.exports = quickSort;
+//module.exports = quickSort; */

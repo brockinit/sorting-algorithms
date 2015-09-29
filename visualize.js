@@ -6,13 +6,41 @@ var data = (function () {
   return randomArray;
 })();
 
-//Create button to initiate sorting process
-var sortButton = document.createElement('button');
-sortButton.appendChild(document.createTextNode('Sort'));
-sortButton.addEventListener('click', function () {
+//Create buttons to initiate sorting process
+var bubbleButton = document.createElement('button');
+bubbleButton.appendChild(document.createTextNode('Bubble Sort'));
+bubbleButton.addEventListener('click', function () {
+  bubbleSort(data);
+});
+document.body.appendChild(bubbleButton);
+
+var insertionButton = document.createElement('button');
+insertionButton.appendChild(document.createTextNode('Insertion Sort'));
+insertionButton.addEventListener('click', function () {
   insertionSort(data);
 });
-document.body.appendChild(sortButton);
+document.body.appendChild(insertionButton);
+
+var selectionButton = document.createElement('button');
+selectionButton.appendChild(document.createTextNode('Selection Sort'));
+selectionButton.addEventListener('click', function () {
+  selectionSort(data);
+});
+document.body.appendChild(selectionButton);
+
+var mergeButton = document.createElement('button');
+mergeButton.appendChild(document.createTextNode('Merge Sort'));
+mergeButton.addEventListener('click', function () {
+  mergeSort(data);
+});
+document.body.appendChild(mergeButton);
+
+var quickButton = document.createElement('button');
+quickButton.appendChild(document.createTextNode('Quick Sort'));
+quickButton.addEventListener('click', function () {
+  quickSort(data);
+});
+document.body.appendChild(quickButton);
 
 //declaring function that draws the bar chart
 function drawChart (dataStep) {
@@ -42,25 +70,35 @@ function drawLater(delay, newArrayState) {
   setTimeout(function() {
     clearChart();
     drawChart(newArrayState);
-  }, delay * 10 );
+  }, delay * 25 );
 }
 
-function insertionSort (items) {
-  //looping through the total length of the unsorted array
-  for (var i = 0; i < itemsd.length; i++) {
-    //setting the current iteration of the unsorted array to a variable
-    var check = items[i];
-    //checking through the sorted area of the items
-    for (var j = i - 1; j >= 0 && (items[j] > check); j--) {
-      //shift the number over
-      items[j + 1] = items[j];
-    }
-    //insert the copied position from up top into the correct position
-    items[j + 1] = check;
-    drawLater(time++, items.map(function(d) { return d; }));
+function quickSort(items) {
+  //if array is empty
+  if (items.length === 0) {
+    return [];
   }
-  //return the sorted items
-  return items;
+  //Initialize the variables responsible for holding the left/right arrays and pivot point
+  var left = [];console.log(left);
+  var right = [];console.log(right);
+  var pivot = items[0];
+  var combined = left.concat(right);
+  //go through each element in itemsay
+  for (var i = 1; i < items.length; i++) {
+    if (items[i] < pivot) {
+      left.push(items[i]); //push smaller elements to the left
+      //drawLater(time++, items.map(function(d) { return d; }));
+    } else {
+      right.push(items[i]); //push larger elements to the right
+      //drawLater(time++, items.map(function(d) { return d; }));
+    }
+    //drawLater(time++, items.map(function(d) { return d; }));
+  }
+  //use recursion to repeat the quick sort process until the smallest items are pushed to the left
+  //connect the left array with the pivot and right array
+  drawLater(time++, items.map(function(d) { return d; }));
+  console.log(items);
+  return quickSort(left).concat(pivot, quickSort(right));
 }
 
 
