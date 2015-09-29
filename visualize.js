@@ -67,7 +67,8 @@ function drawChart (dataStep) {
       .data(dataStep)
     .enter().append('div')
       .style('width', function(d) { return x(d) + 'px'; })
-      .text(function(d) { return d; });
+      .style('height', 1 + 'px')
+     // .text(function(d) { return d; });
 }
 
 drawChart(data);
