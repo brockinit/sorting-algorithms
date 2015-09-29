@@ -18,4 +18,5 @@ function selectionSort (items) {
       drawLater(time++, items.map(function(d) { return d; }));
     }
   }
+  console.log(data);
 }

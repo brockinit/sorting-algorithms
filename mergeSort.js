@@ -1,25 +1,47 @@
-function mergeSort (arr) {
-  //return the array if it is shorter than 2 in length, meaning it is already sorted
-  if (arr.length < 2) return arr;
-  //set the middle point where the array will be separated into two halves
-  var mid = Math.floor(arr.length / 2);
-  var subLeft = mergeSort(arr.slice(0, mid));
-  var subRight = mergeSort(arr.slice(mid));
-  //call the merge function, which is delcared down below
-  return merge(subLeft, subRight);
-}
-//merge function that sorts the two arrays while combining them
-function merge (a, b) {
-  //initialize the result placeholder
-  var result = [];
-  //set the loop that continues to fire while each half still contains elements
-  while (a.length > 0 && b.length > 0)
-      //push the first element in each array to the combined array
-      result.push(a[0] < b[0]? a.shift() : b.shift());
-  return result.concat(a.length? a : b);
+function bottomUpMergeSort(items) {
+  var array = [];
+
+  if ( items ) {
+    drawLater(time++, items.map(function(d) { return d; }));
+    array = items.map(function(item) { return item; });
+  }
+
+  bottomUpSort(array, array.length);
+
+  return array;
 }
 
-//var test = [5,7,1,2,8,3,4,9];
-//console.log(mergeSort(test));
+function bottomUpSort(items, n) {
+  var width,
+      i;
 
-//module.exports = mergeSort;
+  for ( width = 1; width < n; width = width * 2 ) {
+    drawLater(time++, items.map(function(d) { return d; }));
+    for ( i = 0; i < n; i = i + 2 * width ) {
+      bottomUpMerge(items, i, Math.min(i + width, n), Math.min(i + 2 * width, n));
+    }
+  }
+}
+
+function bottomUpMerge(items, left, right, end) {
+  var n = left,
+      m = right,
+      currentSort = [],
+      j;
+
+  for ( j = left; j < end; j++ ) {
+    if ( n < right && ( m >= end || items[n] < items[m] )) {
+      currentSort.push(items[n]);
+      n++;
+    }
+    else {
+      currentSort.push(items[m]);
+      m++;
+    }
+  }
+
+  currentSort.map(function(item,i) { items[left + i] = item; });
+  drawLater(time++, items.map(function(d) { return d; }));
+}
+
+

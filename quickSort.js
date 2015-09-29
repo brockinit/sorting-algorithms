@@ -1,24 +1,27 @@
-/*function quickSort(arr) {
+function quickSort(items) {
   //if array is empty
-  if (arr.length === 0) {
+  if (items.length === 0) {
     return [];
   }
   //Initialize the variables responsible for holding the left/right arrays and pivot point
-  var left = [];
-  var right = [];
-  var pivot = arr[0];
-  //go through each element in array
-  for (var i = 1; i < arr.length; i++) {
-    if (arr[i] < pivot) {
-      left.push(arr[i]); //push smaller elements to the left
+  var left = [];console.log(left);
+  var right = [];console.log(right);
+  var pivot = items[0];
+  var combined = left.concat(right);
+  //go through each element in itemsay
+  for (var i = 1; i < items.length; i++) {
+    if (items[i] < pivot) {
+      left.push(items[i]); //push smaller elements to the left
+      //drawLater(time++, items.map(function(d) { return d; }));
     } else {
-      right.push(arr[i]); //push larger elements to the right
+      right.push(items[i]); //push larger elements to the right
+      //drawLater(time++, items.map(function(d) { return d; }));
     }
+    //drawLater(time++, items.map(function(d) { return d; }));
   }
   //use recursion to repeat the quick sort process until the smallest items are pushed to the left
   //connect the left array with the pivot and right array
-  return quicksort(left).concat(pivot, quicksort(right));
+  drawLater(time++, items.map(function(d) { return d; }));
+  console.log(items);
+  return quickSort(left).concat(pivot, quickSort(right));
 }
-
-
-//module.exports = quickSort; */

@@ -6,7 +6,7 @@ var data = (function () {
   return randomArray;
 })();
 
-//Create buttons to initiate sorting process
+//create buttons to initiate sorting process
 var bubbleButton = document.createElement('button');
 bubbleButton.appendChild(document.createTextNode('Bubble Sort'));
 bubbleButton.addEventListener('click', function () {
@@ -31,7 +31,7 @@ document.body.appendChild(selectionButton);
 var mergeButton = document.createElement('button');
 mergeButton.appendChild(document.createTextNode('Merge Sort'));
 mergeButton.addEventListener('click', function () {
-  mergeSort(data);
+  bottomUpMergeSort(data);
 });
 document.body.appendChild(mergeButton);
 
@@ -42,11 +42,25 @@ quickButton.addEventListener('click', function () {
 });
 document.body.appendChild(quickButton);
 
+//created reset button that generates a new, unsorted chart
+var resetButton = document.createElement('button');
+resetButton.appendChild(document.createTextNode('Reset'));
+resetButton.addEventListener('click', function () {
+  d3.select('.chart').html('');
+  var newArray = [];
+  for (var i = 0; i < 100; i++) {
+    newArray.push(Math.floor(Math.random() * 100));
+  }
+  drawChart(newArray);
+  console.log('heyyy');
+});
+document.body.appendChild(resetButton);
+
 //declaring function that draws the bar chart
 function drawChart (dataStep) {
   var x = d3.scale.linear()
       .domain([0, d3.max(dataStep)])
-      .range([0, 420]);
+      .range([0, 320]);
 
   d3.select('.chart')
     .selectAll('div')
@@ -73,33 +87,6 @@ function drawLater(delay, newArrayState) {
   }, delay * 25 );
 }
 
-function quickSort(items) {
-  //if array is empty
-  if (items.length === 0) {
-    return [];
-  }
-  //Initialize the variables responsible for holding the left/right arrays and pivot point
-  var left = [];console.log(left);
-  var right = [];console.log(right);
-  var pivot = items[0];
-  var combined = left.concat(right);
-  //go through each element in itemsay
-  for (var i = 1; i < items.length; i++) {
-    if (items[i] < pivot) {
-      left.push(items[i]); //push smaller elements to the left
-      //drawLater(time++, items.map(function(d) { return d; }));
-    } else {
-      right.push(items[i]); //push larger elements to the right
-      //drawLater(time++, items.map(function(d) { return d; }));
-    }
-    //drawLater(time++, items.map(function(d) { return d; }));
-  }
-  //use recursion to repeat the quick sort process until the smallest items are pushed to the left
-  //connect the left array with the pivot and right array
-  drawLater(time++, items.map(function(d) { return d; }));
-  console.log(items);
-  return quickSort(left).concat(pivot, quickSort(right));
-}
 
 
 /*
