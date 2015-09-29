@@ -22,5 +22,4 @@ function merge (a, b) {
 //var test = [5,7,1,2,8,3,4,9];
 //console.log(mergeSort(test));
 
-
-module.exports = mergeSort;
+//module.exports = mergeSort;

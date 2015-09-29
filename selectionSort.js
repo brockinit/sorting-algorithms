@@ -19,4 +19,4 @@ function selectionSort (array) {
   }
 }
 
-module.exports = selectionSort;
+//module.exports = selectionSort;

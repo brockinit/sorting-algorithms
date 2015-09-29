@@ -1,4 +1,4 @@
-function bubbleSort(items) {
+function bubbleSort (items) {
 
   for (var i = 0; i < items.length; i++) { //Number of passes
 
