@@ -23,5 +23,5 @@ function quickSort(items) {
   //connect the left array with the pivot and right array
   drawLater(time++, items.map(function(d) { return d; }));
   console.log(items);
-  return quickSort(left).concat(pivot, quickSort(right));
+  quickSort(left).concat(pivot, quickSort(right));
 }

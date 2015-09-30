@@ -46,13 +46,7 @@ document.body.appendChild(quickButton);
 var resetButton = document.createElement('button');
 resetButton.appendChild(document.createTextNode('Reset'));
 resetButton.addEventListener('click', function () {
-  d3.select('.chart').html('');
-  var newArray = [];
-  for (var i = 0; i < 100; i++) {
-    newArray.push(Math.floor(Math.random() * 100));
-  }
-  drawChart(newArray);
-  console.log('heyyy');
+  location.reload();
 });
 document.body.appendChild(resetButton);
 
