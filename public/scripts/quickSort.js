@@ -4,8 +4,8 @@ function quickSort(items) {
     return [];
   }
   //Initialize the variables responsible for holding the left/right arrays and pivot point
-  var left = [];console.log(left);
-  var right = [];console.log(right);
+  var left = [];
+  var right = [];
   var pivot = items[0];
   var combined = left.concat(right);
   //go through each element in itemsay
@@ -23,5 +23,5 @@ function quickSort(items) {
   //connect the left array with the pivot and right array
   drawLater(time++, items.map(function(d) { return d; }));
   console.log(items);
-  quickSort(left).concat(pivot, quickSort(right));
+  return quickSort(left).concat(pivot, quickSort(right));
 }

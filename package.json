@@ -1,0 +1,24 @@
+{
+  "name": "Sorting_Algorithms",
+  "version": "1.0.0",
+  "description": "_______ Javascript examples of the different types of sorting methods typically used on arrays.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brockinit/sorting-algorithms.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brockinit/sorting-algorithms/issues"
+  },
+  "homepage": "https://github.com/brockinit/sorting-algorithms",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-connect": "^2.2.0",
+    "gulp-sass": "^2.0.4"
+  }
+}

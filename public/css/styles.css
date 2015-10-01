@@ -1,0 +1,25 @@
+@import url(http://fonts.googleapis.com/css?family=Exo:200,400,600,800);
+.chart div {
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white; }
+
+/*.resort {
+  padding: 10px;
+  border: 1px solid black;
+  background: #ccc;
+  cursor: pointer;
+  width: 100px;
+  margin-bottom: 20px;
+}
+.data {
+  position: fixed;
+  border: 1px solid black;
+  width: 100px;
+} */
+h1 {
+  text-align: center;
+  font-family: "Exo", "Helvetica Neue", sans-serif; }
