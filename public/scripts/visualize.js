@@ -79,7 +79,7 @@ function drawLater(delay, newArrayState) {
   setTimeout(function() {
     clearChart();
     drawChart(newArrayState);
-  }, delay * 25 );
+  }, delay * 100 );
 }
 
 
